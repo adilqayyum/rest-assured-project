@@ -137,14 +137,6 @@ public class ResponseAssert extends AbstractAssert<ResponseAssert, Response> {
         return this;
     }
 
-    public ResponseAssert hasFirebaseTokenErrorMessage() {
-        softAssertions
-                .assertThat(actual.jsonPath().getString("message"))
-                .isEqualTo(
-                        "Not authorized!: Decoding Firebase ID token failed. Make sure you passed the entire string JWT which represents an ID token. See https://firebase.google.com/docs/auth/admin/verify-id-tokens for details on how to retrieve an ID token.");
-        return this;
-    }
-
     public ResponseAssert isEmpty() {
         softAssertions.assertThat(actual.body().asString()).as("Verify response has no body").isEmpty();
         return this;
@@ -153,7 +145,7 @@ public class ResponseAssert extends AbstractAssert<ResponseAssert, Response> {
     public ResponseAssert hasUnAuthorizedUserPermissionErrorMessage() {
         softAssertions
                 .assertThat(actual.jsonPath().getString("message"))
-                .isEqualTo("The user has not enough right to access this resource (user type: GUEST)");
+                .isEqualTo("The user has not enough right to access this resource");
         return this;
     }
 
