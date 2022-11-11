@@ -27,6 +27,7 @@
         <gson.version>2.9.0</gson.version>
         <rest-assured-extent-report-plugin.version>2.1.2</rest-assured-extent-report-plugin.version>
         <rest-assured-extent-junit5.version>1.0.0</rest-assured-extent-junit5.version>
+        <maven.surefire.plugin>3.0.0-M5</maven.surefire.plugin>
     </properties>
 
     <dependencies>
@@ -134,6 +135,21 @@
 
     </dependencies>
 
+    <profiles>
+        <profile>
+            <id>all</id>
+            <properties>
+                <tests>Regression</tests>
+            </properties>
+        </profile>
+        <profile>
+            <id>unit-test</id>
+            <properties>
+                <tests>unit-test</tests>
+            </properties>
+        </profile>
+    </profiles>
+
     <build>
         <plugins>
 
@@ -163,6 +179,26 @@
                     <pdfGenerate>false</pdfGenerate>
                     <sparkViewOrder>TEST,DASHBOARD,EXCEPTION,CATEGORY,AUTHOR,DEVICE</sparkViewOrder>
                     <sparkHideLogEvents>true</sparkHideLogEvents>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven.surefire.plugin}</version>
+                <configuration>
+                    <!--suppress UnresolvedMavenProperty -->
+                    <groups>${tests}</groups>
+                    <testFailureIgnore>true</testFailureIgnore>
+                    <systemPropertyVariables>
+                        <allure.results.directory>target/allure-results
+                        </allure.results.directory>
+                    </systemPropertyVariables>
+                    <properties>
+                        <property>
+                            <name>listener</name>
+                            <value>io.qameta.allure.junit5.AllureJunit5</value>
+                        </property>
+                    </properties>
                 </configuration>
             </plugin>
 
