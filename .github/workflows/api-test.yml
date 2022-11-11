@@ -40,7 +40,9 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: maven
+
     - name: Execute Tests
+      continue-on-error: true
       run: >-
         mvn clean test
         rest-assured-extent-report:extentreport surefire-report:report
