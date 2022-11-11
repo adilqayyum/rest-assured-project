@@ -14,6 +14,21 @@ on:
   pull_request:
     branches: [ "main" ]
 
+  workflow_dispatch:
+    inputs:
+      tags:
+        description: 'Provide tags separated by commas. Available tags API'
+        required: true
+        default: 'API'
+      environment:
+        description: 'STAGING or DEVELOP'
+        required: false
+        type: choice
+        options:
+          - 'STAGING'
+          - 'DEVELOP'
+        default: 'STAGING'
+
 jobs:
   build:
 
