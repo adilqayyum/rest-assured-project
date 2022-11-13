@@ -5,7 +5,7 @@ Sample framework for API automation using RestAssured with Java.
 
 ## Overview
 
-This is a simple yet easily scalable API Automation Framework designed using RestAssured. The languages used is Java, alongside Extent Reports. The build tool used is Maven. The tests can easily be executed, modified or added without many code changes or complexities. The tests can be scaled or modified on the go right from the feature files.
+This is a simple yet easily scalable API Automation Framework designed using RestAssured. The languages used is Java, alongside Extent Reports. The build tool used is Maven. The tests can easily be executed, modified or added without many code changes or complexities, as use of properties and API class segregation is maintained.
 
 Languages Used: JAVA
 Framework Used: JUnit
