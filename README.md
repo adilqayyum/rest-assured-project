@@ -33,6 +33,12 @@ $ mvn test
 
 ![image](https://user-images.githubusercontent.com/35289892/201520193-85bb1a68-9a35-459c-8d04-84bf975f9b8b.png)
 
+After execution, the extent report can be located under artifacts:
+![image](https://user-images.githubusercontent.com/35289892/201521245-455d9b18-0a68-4534-9120-c6e1ddc530e6.png)
+
+Inside the report, test details can be seen, alongside the Request and Response Headers and Body:
+![image](https://user-images.githubusercontent.com/35289892/201521280-54d833aa-aaab-4b07-b36f-74a11f8cd69c.png)
+
 ---
 
 ## Support
