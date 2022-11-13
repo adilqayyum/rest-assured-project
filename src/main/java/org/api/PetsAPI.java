@@ -1,12 +1,15 @@
 package org.api;
+import com.typesafe.config.Config;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
+import org.api.config.TestEnvFactory;
 import org.api.pets.data.AddPet;
 
 public class PetsAPI {
 
-    private static final String ADD_PET = "/pet";
-    private static final String GET_PET_BY_STATUS = "/pet/findByStatus";
+    private static final Config CONFIG = TestEnvFactory.getInstance().getConfig();
+    private static final String ADD_PET = CONFIG.getString("ADD_PET");
+    private static final String GET_PET_BY_STATUS = CONFIG.getString("GET_PET_BY_STATUS");
 
     public static Response addPetEndpoint(AddPet petRequestBody) {
         return RestAssured.given()
