@@ -85,7 +85,7 @@ public class APIAutomationTests {
     @ParameterizedTest
     @Order(2)
     @CsvSource({"-1","-2"})
-    @DisplayName("Verify that Get Pet by ID works correctly")
+    @DisplayName("Verify that Get Pet returns 404 for invalid IDs")
     void testGetPetsByID(Long Id) {
 
         Response response = PetsAPI.getPetById(Id);
