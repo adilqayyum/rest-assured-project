@@ -19,17 +19,20 @@ To install all dependencies, run
 $ mvn clean install
 ```
 
-## Running tests from Terminal##
+## Running tests from Terminal
 
 ```console
 $ mvn test
 ```
 
-## Running tests from Github Action##
+## Running tests from Github Action
 
 - While in the repository on Github, navigate to Actions.
 - Under All workflows, select Run API tests.
 - Click on Run Workflow button on the right, and click Run Workflow. (The variables currently are dummy, and can be later used to select between different tags or environments for execution)
+
+![image](https://user-images.githubusercontent.com/35289892/201520193-85bb1a68-9a35-459c-8d04-84bf975f9b8b.png)
+
 ---
 
 ## Support
